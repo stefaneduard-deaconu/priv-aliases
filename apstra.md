@@ -1,3 +1,4 @@
+```sh
 # git aliases
 alias gst="git status"
 alias gco="git checkout"
@@ -23,3 +24,4 @@ alias build_slicercli_prereq8="docker pull docker pull docker-registry:5000/slic
 alias tox38="tox -e py38 -- "
 alias tox27="tox -e py27 -- "
 alias tox="cd ~/Project/systest && bash tox_build.sh"
+```
