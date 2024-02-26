@@ -24,4 +24,14 @@ alias build_slicercli_prereq8="docker pull docker pull docker-registry:5000/slic
 alias tox38="tox -e py38 -- "
 alias tox27="tox -e py27 -- "
 alias tox="cd ~/Project/systest && bash tox_build.sh"
+
+# EXTRA:
+alias slicercli_update='docker pull docker-registry-ng.dc1.apstra.com:5000/slicercli/slicercli:latest'
+alias slicercli_dev='docker run --rm --net host -i -t -e SLICER_SERVER_URL=http://slicer-dev.dc1.apstra.com:80 -v $HOME:/root -v $HOME:/project docker-registry-ng.dc1.apstra.com:5000/slicercli/slicercli /usr/local/bin/slicercli -it'
+alias slicercli='docker run --rm --net host -i -t -e SLICER_SERVER_URL=http://slicer.dc1.apstra.com:80 -v $HOME:/root -v $HOME:/project docker-registry-ng.dc1.apstra.com:5000/slicercli/slicercli /usr/local/bin/slicercli -it'
+
+alias tox_start='docker run -it --rm --net host -v /var/run/docker.sock:/var/run/docker.sock -v /home/ed/Project/systest-2272/.entrypoint.sh:/tmp/entrypoint.sh --privileged -v /home/ed/Project/systest-2272:/project -w /root --entrypoint=/tmp/entrypoint.sh docker-registry.dc1.apstra.com:5000/slicer-dev:0.3.14'
+
+alias ssh_dev='ssh apstrktr@slicer-dev-cp.dc1.apstra.com'
+alias ssh_prd='ssh apstrktr@slicer-dev.dc1.apstra.com'
 ```
